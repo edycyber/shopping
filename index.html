@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping - Sparrow AI</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
     <style>
         * {
             box-sizing: border-box;
@@ -275,42 +276,42 @@
     <script>
         const products = {
             Home: [
-                { name: "Hotel Luxury Bed Sheets", details: "Deep Pockets, Microfiber, Extra Soft & Wrinkle Free Sheets - White Oeko-Tex Bed Sheet Set", image: "bed.jpg", amazonUrl: "https://amzn.to/4hl4D3x" },
-                { name: "Stanley Quencher H2.0", details: "Steel Vacuum Insulated Tumbler with Lid and Straw for Water", image: "Stanley.jpg", amazonUrl: "https://amzn.to/3YzykGO" },
-                { name: "Terro Fruit Fly Trap 4", details: "This fast-acting traps eliminate fruit fly infestations.", image: "Trap.jpg", amazonUrl: "https://amzn.to/48hXs8l" },
+                { name: "Hotel Luxury Bed Sheets", details: "Deep Pockets, Microfiber, Extra Soft & Wrinkle Free Sheets - White Oeko-Tex Bed Sheet Set", image: "images/bed.jpg", amazonUrl: "https://amzn.to/4hl4D3x" },
+                { name: "Stanley Quencher H2.0", details: "Steel Vacuum Insulated Tumbler with Lid and Straw for Water", image: "images/Stanley.jpg", amazonUrl: "https://amzn.to/3YzykGO" },
+                { name: "Terro Fruit Fly Trap 4", details: "This fast-acting traps eliminate fruit fly infestations.", image: "images/Trap.jpg", amazonUrl: "https://amzn.to/48hXs8l" },
             ],
             Technology: [
-                { name: "Anker iPhone 16 Charger, USB C Charger", details: "20W High-Speed Charging: Enjoy fast charging with 20W max output for your iPhone, Samsung phones, and other devices.", image: "charger.jpg", amazonUrl: "https://amzn.to/3NEDNpt" },
-                { name: "Apple iPad (9th Generation)", details: "All the essentials in the most affordable iPad, with a beautiful 10.2-inch Retina display, powerful A13 Bionic chip, and an Ultra Wide front camera with Center Stage. Work, play, create, learn, stay connected, and more.", image: "apple.jpg", amazonUrl: "https://amzn.to/3UlxZ7W" },
-                { name: "Pencil A8 for Apple iPad 2018-2024", details: "Metapen Pencil A8 can be fully charged in just 30 minutes with USB-C and run for up to 10 hours.", image: "pencil.jpg", amazonUrl: "https://amzn.to/4dW68T3" },
-				{ name: "Nelko Label Maker Machine with Tape", details: "Compared with the traditional label makers, half weight and size of the traditional label maker, smaller, smarter and convenient for users to carry.", image: "maker.jpg", amazonUrl: "https://amzn.to/4f0p5Fw" },
-				{ name: "Epson EcoTank ET-2800 ", details: "Innovative Cartridge-Free Printing ― High-capacity ink tanks mean no more tiny, expensive ink cartridges; Epson’s exclusive EcoFit ink bottles make filling easy and worry-free", image: "epson.jpg", amazonUrl: "https://amzn.to/4hh422X" },
+                { name: "Anker iPhone 16 Charger, USB C Charger", details: "20W High-Speed Charging: Enjoy fast charging with 20W max output for your iPhone, Samsung phones, and other devices.", image: "images/charger.jpg", amazonUrl: "https://amzn.to/3NEDNpt" },
+                { name: "Apple iPad (9th Generation)", details: "All the essentials in the most affordable iPad, with a beautiful 10.2-inch Retina display, powerful A13 Bionic chip, and an Ultra Wide front camera with Center Stage. Work, play, create, learn, stay connected, and more.", image: "images/apple.jpg", amazonUrl: "https://amzn.to/3UlxZ7W" },
+                { name: "Pencil A8 for Apple iPad 2018-2024", details: "Metapen Pencil A8 can be fully charged in just 30 minutes with USB-C and run for up to 10 hours.", image: "images/pencil.jpg", amazonUrl: "https://amzn.to/4dW68T3" },
+				{ name: "Nelko Label Maker Machine with Tape", details: "Compared with the traditional label makers, half weight and size of the traditional label maker, smaller, smarter and convenient for users to carry.", image: "images/maker.jpg", amazonUrl: "https://amzn.to/4f0p5Fw" },
+				{ name: "Epson EcoTank ET-2800 ", details: "Innovative Cartridge-Free Printing ― High-capacity ink tanks mean no more tiny, expensive ink cartridges; Epson’s exclusive EcoFit ink bottles make filling easy and worry-free", image: "images/epson.jpg", amazonUrl: "https://amzn.to/4hh422X" },
             ],
             Fashion: [
-                { name: "Hanes Men Hoodie", details: "Basic hoodie shaping for that sporty look you love.", image: "hanes.jpg", amazonUrl: "https://amzn.to/4fk33Ns" },
-                { name: "THE GYM PEOPLE Thick High Waist Yoga Pants with Pockets", details: "Suitable for Capri, Workout, Fitness.", image: "yoga.jpg", amazonUrl: "https://amzn.to/3Ag5JNp" },
-                { name: "Funziez! Adult Onesie Halloween Costume", details: "These eye-catching triceratops onesies feature a hood with adorable face, horns, and plush tail for full effect.", image: "hallo.jpg", amazonUrl: "https://amzn.to/40mxFK3" },
-                { name: "The Children's Place Baby Family Matching", details: "They're ready to catch some zzz's in the softest and comfiest cotton pajamas from The Children's Place", image: "pijama.jpg", amazonUrl: "https://amzn.to/3YnAB6N" },
+                { name: "Hanes Men Hoodie", details: "Basic hoodie shaping for that sporty look you love.", image: "images/hanes.jpg", amazonUrl: "https://amzn.to/4fk33Ns" },
+                { name: "THE GYM PEOPLE Thick High Waist Yoga Pants with Pockets", details: "Suitable for Capri, Workout, Fitness.", image: "images/yoga.jpg", amazonUrl: "https://amzn.to/3Ag5JNp" },
+                { name: "Funziez! Adult Onesie Halloween Costume", details: "These eye-catching triceratops onesies feature a hood with adorable face, horns, and plush tail for full effect.", image: "images/hallo.jpg", amazonUrl: "https://amzn.to/40mxFK3" },
+                { name: "The Children's Place Baby Family Matching", details: "They're ready to catch some zzz's in the softest and comfiest cotton pajamas from The Children's Place", image: "images/pijama.jpg", amazonUrl: "https://amzn.to/3YnAB6N" },
             ],
             Toys: [
-                { name: "Youtooz Cult of The Lamb The One Who Waits 4", details: "Youtooz Cult of the Lamb The One Who Waits Vinyl Figure", image: "you.jpg", amazonUrl: "https://amzn.to/4flRlCd" },
-                { name: "Fidget Toys, 120 Pack Fidgets Set", details: "PACK OF 120: 4 Pop Bubbles, 1 Flip Chain, 6 Mochi Squishies, 6 Stretchy String Fidgets", image: "wow.jpg", amazonUrl: "https://amzn.to/40jYy1h" },
-                { name: "LCD Writing Tablet for Kids", details: "Educational Kid Toys, Doodle Pad Dinosaur Toys", image: "table.jpg", amazonUrl: "https://amzn.to/3NC90K3" },
+                { name: "Youtooz Cult of The Lamb The One Who Waits 4", details: "Youtooz Cult of the Lamb The One Who Waits Vinyl Figure", image: "images/you.jpg", amazonUrl: "https://amzn.to/4flRlCd" },
+                { name: "Fidget Toys, 120 Pack Fidgets Set", details: "PACK OF 120: 4 Pop Bubbles, 1 Flip Chain, 6 Mochi Squishies, 6 Stretchy String Fidgets", image: "images/wow.jpg", amazonUrl: "https://amzn.to/40jYy1h" },
+                { name: "LCD Writing Tablet for Kids", details: "Educational Kid Toys, Doodle Pad Dinosaur Toys", image: "images/table.jpg", amazonUrl: "https://amzn.to/3NC90K3" },
             ],
             Travel: [
-                { name: "Veken 8 Set Packing Cubes for Suitcases", details: "Set for Travel Accessories in 4 Sizes", image: "set.jpg", amazonUrl: "https://amzn.to/3NGJJhM" },
-                { name: "Taygeer Travel Backpack for Women", details: "Carry On Backpack with USB Charging Port & Shoe Pouch", image: "bagw.jpg", amazonUrl: "https://amzn.to/3YjuMXJ" },
-                { name: "Travel and Airplane Pillow", details: "Neck and Shoulder Support - Super-Soft", image: "pillow.jpg", amazonUrl: "https://amzn.to/4fiqyq6" },
+                { name: "Veken 8 Set Packing Cubes for Suitcases", details: "Set for Travel Accessories in 4 Sizes", image: "images/set.jpg", amazonUrl: "https://amzn.to/3NGJJhM" },
+                { name: "Taygeer Travel Backpack for Women", details: "Carry On Backpack with USB Charging Port & Shoe Pouch", image: "images/bagw.jpg", amazonUrl: "https://amzn.to/3YjuMXJ" },
+                { name: "Travel and Airplane Pillow", details: "Neck and Shoulder Support - Super-Soft", image: "images/pillow.jpg", amazonUrl: "https://amzn.to/4fiqyq6" },
             ],
             Rudeness: [
-                { name: "The Height of Rudeness", details: "In this short e-original The Height of Rudeness, readers will get 5 essays - one never-before-published", image: "book1.jpg", amazonUrl: "https://amzn.to/48k109Q" },
-                { name: "Whoopee Cushion", details: "Classic prank item", image: "300/200", amazonUrl: "https://www.amazon.com/s?k=whoopee+cushion" },
-                { name: "Funny T-Shirt", details: "Sarcastic slogans, all sizes", image: "300/200", amazonUrl: "https://www.amazon.com/s?k=funny+t-shirt" },
+                { name: "The Height of Rudeness", details: "In this short e-original The Height of Rudeness, readers will get 5 essays - one never-before-published", image: "images/book1.jpg", amazonUrl: "https://amzn.to/48k109Q" },
+                { name: "Silicon Valley Success Guide for Startups in 2024", details: "The Secrets of Silicon Valley Revealed with access platform", image: "valley.jpg", amazonUrl: "https://amzn.to/40d2vF0" },
+                { name: "Mastering Landing Pages", details: "Importance in Digital Marketing: Why businesses need landing pages to convert visitors into customers, and how they can directly impact revenue.", image: "master.jpg", amazonUrl: "https://amzn.to/3UpENl3" },
             ],
             Beauty: [
-                { name: "Clean Skin Club Clean Towels XL", details: "50 Dermatologist tested and approved biobased face towels.", image: "clean.jpg", amazonUrl: "https://amzn.to/3UqQiZI" },
-                { name: "PanOxyl Acne Foaming Wash Benzoyl ", details: "Highest over the counter Benzoyl peroxide wash available", image: "acne.jpg", amazonUrl: "https://amzn.to/4hinqwu" },
-                { name: "Makeup Remover Wipes", details: "Twin Pack with 25 count of ultra-soft, pre-moistened Neutrogena Makeup Remover", image: "makeup.jpg", amazonUrl: "https://amzn.to/4hd2kzH" },
+                { name: "Clean Skin Club Clean Towels XL", details: "50 Dermatologist tested and approved biobased face towels.", image: "images/clean.jpg", amazonUrl: "https://amzn.to/3UqQiZI" },
+                { name: "PanOxyl Acne Foaming Wash Benzoyl ", details: "Highest over the counter Benzoyl peroxide wash available", image: "images/acne.jpg", amazonUrl: "https://amzn.to/4hinqwu" },
+                { name: "Makeup Remover Wipes", details: "Twin Pack with 25 count of ultra-soft, pre-moistened Neutrogena Makeup Remover", image: "images/makeup.jpg", amazonUrl: "https://amzn.to/4hd2kzH" },
             ],
         };
 
