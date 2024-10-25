@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping - Sparrow AI</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f5f9;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        #searchInput {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: none;
+            background-color: #1e40af;
+            color: white;
+            margin-top: 10px;
+        }
+
+        #searchInput::placeholder {
+            color: #93c5fd;
+        }
+
+        nav {
+            background-color: #1e40af;
+        }
+
+        #navList {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0;
+            flex-wrap: wrap;
+        }
+
+        #navList button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            padding: 5px 10px;
+            margin: 2px;
+        }
+
+        #navList button:hover {
+            background-color: #2563eb;
+        }
+
+        .banner {
+            background-color: #fbbf24;
+            color: #1e3a8a;
+            padding: 20px 0;
+        }
+
+        .banner .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .banner button {
+            background-color: #1e3a8a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        main {
+            padding: 40px 0;
+            flex-grow: 1;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .product-card h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .product-card p {
+            color: #4b5563;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-card a {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .product-card a:hover {
+            background-color: #2563eb;
+        }
+
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-top: 0;
+        }
+
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            #searchInput {
+                max-width: none;
+                margin-top: 15px;
+            }
+
+            .banner .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .banner h2 {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <div class="header-content">
+                    <h1>Shopping - Sparrow AI 🐦</h1>
+                    <input type="text" id="searchInput" placeholder="Search Best Price">
+                </div>
+            </div>
+            <nav>
+                <div class="container">
+                    <ul id="navList"></ul>
+                </div>
+            </nav>
+        </header>
+
+        <div class="banner">
+            <div class="container">
+                <h2>Best Seller in Sports! Big Deal!</h2>
+                <button>See Offer https://amzn.to/4fj44W9</button>
+            </div>
+        </div>
+
+        <main class="container">
+            <h2 id="categoryTitle">Home</h2>
+            <div id="productGrid" class="product-grid"></div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div>
+                        <h3>About Shopping - Sparrow AI 🐦</h3>
+                        <p>Your one-stop shop for the best deals on everything you need.</p>
+                    </div>
+                    <div>
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="https://www.amazon.com/">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li><a href="https://www.amazon.com/">Facebook</a></li>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2024 Sparrow AI 🐦. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const products = {
+            Home: [
+                { name: "Hotel Luxury Bed Sheets", details: "Deep Pockets, Microfiber, Extra Soft & Wrinkle Free Sheets - White Oeko-Tex Bed Sheet Set", image: "bed.jpg", amazonUrl: "https://amzn.to/4hl4D3x" },
+                { name: "Stanley Quencher H2.0", details: "Steel Vacuum Insulated Tumbler with Lid and Straw for Water", image: "Stanley.jpg", amazonUrl: "https://amzn.to/3YzykGO" },
+                { name: "Terro Fruit Fly Trap 4", details: "This fast-acting traps eliminate fruit fly infestations.", image: "Trap.jpg", amazonUrl: "https://amzn.to/48hXs8l" },
+            ],
+            Technology: [
+                { name: "Anker iPhone 16 Charger, USB C Charger", details: "20W High-Speed Charging: Enjoy fast charging with 20W max output for your iPhone, Samsung phones, and other devices.", image: "charger.jpg", amazonUrl: "https://amzn.to/3NEDNpt" },
+                { name: "Apple iPad (9th Generation)", details: "All the essentials in the most affordable iPad, with a beautiful 10.2-inch Retina display, powerful A13 Bionic chip, and an Ultra Wide front camera with Center Stage. Work, play, create, learn, stay connected, and more.", image: "apple.jpg", amazonUrl: "https://amzn.to/3UlxZ7W" },
+                { name: "Pencil A8 for Apple iPad 2018-2024", details: "Metapen Pencil A8 can be fully charged in just 30 minutes with USB-C and run for up to 10 hours.", image: "pencil.jpg", amazonUrl: "https://amzn.to/4dW68T3" },
+				{ name: "Nelko Label Maker Machine with Tape", details: "Compared with the traditional label makers, half weight and size of the traditional label maker, smaller, smarter and convenient for users to carry.", image: "maker.jpg", amazonUrl: "https://amzn.to/4f0p5Fw" },
+				{ name: "Epson EcoTank ET-2800 ", details: "Innovative Cartridge-Free Printing ― High-capacity ink tanks mean no more tiny, expensive ink cartridges; Epson’s exclusive EcoFit ink bottles make filling easy and worry-free", image: "epson.jpg", amazonUrl: "https://amzn.to/4hh422X" },
+            ],
+            Fashion: [
+                { name: "Hanes Men Hoodie", details: "Basic hoodie shaping for that sporty look you love.", image: "hanes.jpg", amazonUrl: "https://amzn.to/4fk33Ns" },
+                { name: "THE GYM PEOPLE Thick High Waist Yoga Pants with Pockets", details: "Suitable for Capri, Workout, Fitness.", image: "yoga.jpg", amazonUrl: "https://amzn.to/3Ag5JNp" },
+                { name: "Funziez! Adult Onesie Halloween Costume", details: "These eye-catching triceratops onesies feature a hood with adorable face, horns, and plush tail for full effect.", image: "hallo.jpg", amazonUrl: "https://amzn.to/40mxFK3" },
+                { name: "The Children's Place Baby Family Matching", details: "They're ready to catch some zzz's in the softest and comfiest cotton pajamas from The Children's Place", image: "pijama.jpg", amazonUrl: "https://amzn.to/3YnAB6N" },
+            ],
+            Toys: [
+                { name: "Youtooz Cult of The Lamb The One Who Waits 4", details: "Youtooz Cult of the Lamb The One Who Waits Vinyl Figure", image: "you.jpg", amazonUrl: "https://amzn.to/4flRlCd" },
+                { name: "Fidget Toys, 120 Pack Fidgets Set", details: "PACK OF 120: 4 Pop Bubbles, 1 Flip Chain, 6 Mochi Squishies, 6 Stretchy String Fidgets", image: "wow.jpg", amazonUrl: "https://amzn.to/40jYy1h" },
+                { name: "LCD Writing Tablet for Kids", details: "Educational Kid Toys, Doodle Pad Dinosaur Toys", image: "table.jpg", amazonUrl: "https://amzn.to/3NC90K3" },
+            ],
+            Travel: [
+                { name: "Veken 8 Set Packing Cubes for Suitcases", details: "Set for Travel Accessories in 4 Sizes", image: "set.jpg", amazonUrl: "https://amzn.to/3NGJJhM" },
+                { name: "Taygeer Travel Backpack for Women", details: "Carry On Backpack with USB Charging Port & Shoe Pouch", image: "bagw.jpg", amazonUrl: "https://amzn.to/3YjuMXJ" },
+                { name: "Travel and Airplane Pillow", details: "Neck and Shoulder Support - Super-Soft", image: "pillow.jpg", amazonUrl: "https://amzn.to/4fiqyq6" },
+            ],
+            Rudeness: [
+                { name: "The Height of Rudeness", details: "In this short e-original The Height of Rudeness, readers will get 5 essays - one never-before-published", image: "book1.jpg", amazonUrl: "https://amzn.to/48k109Q" },
+                { name: "Whoopee Cushion", details: "Classic prank item", image: "300/200", amazonUrl: "https://www.amazon.com/s?k=whoopee+cushion" },
+                { name: "Funny T-Shirt", details: "Sarcastic slogans, all sizes", image: "300/200", amazonUrl: "https://www.amazon.com/s?k=funny+t-shirt" },
+            ],
+            Beauty: [
+                { name: "Clean Skin Club Clean Towels XL", details: "50 Dermatologist tested and approved biobased face towels.", image: "clean.jpg", amazonUrl: "https://amzn.to/3UqQiZI" },
+                { name: "PanOxyl Acne Foaming Wash Benzoyl ", details: "Highest over the counter Benzoyl peroxide wash available", image: "acne.jpg", amazonUrl: "https://amzn.to/4hinqwu" },
+                { name: "Makeup Remover Wipes", details: "Twin Pack with 25 count of ultra-soft, pre-moistened Neutrogena Makeup Remover", image: "makeup.jpg", amazonUrl: "https://amzn.to/4hd2kzH" },
+            ],
+        };
+
+        const navItems = [
+            { name: 'Home', icon: 'home' },
+            { name: 'Technology', icon: 'smartphone' },
+            { name: 'Fashion', icon: 'shopping-bag' },
+            { name: 'Toys', icon: 'truck' },
+            { name: 'Travel', icon: 'plane' },
+            { name: 'Rudeness', icon: 'frown' },
+            { name: 'Beauty', icon: 'home' },
+        ];
+
+        let activeTab = 'Home';
+        let searchTerm = '';
+
+        function initNavigation() {
+            const navList = document.getElementById('navList');
+            navItems.forEach(item => {
+                const li = document.createElement('li');
+                const button = document.createElement('button');
+                button.textContent = item.name;
+                button.onclick = () => setActiveTab(item.name);
+                li.appendChild(button);
+                navList.appendChild(li);
+            });
+        }
+
+        function setActiveTab(tabName) {
+            activeTab = tabName;
+            document.getElementById('categoryTitle').textContent = tabName;
+            renderProductGrid();
+        }
+
+        function renderProductGrid() {
+            const productGrid = document.getElementById('productGrid');
+            productGrid.innerHTML = '';
+
+            const filteredProducts = searchTerm
+                ? Object.values(products).flat().filter(product =>
+                    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    product.details.toLowerCase().includes(searchTerm.toLowerCase())
+                )
+                : products[activeTab];
+
+            filteredProducts.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img src="/api/placeholder/${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.details}</p>
+                    <a href="${product.amazonUrl}" target="_blank" rel="noopener noreferrer">View Details on Amazon</a>
+                `;
+                productGrid.appendChild(productCard);
+            });
+        }
+
+        function initSearchInput() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value;
+                renderProductGrid();
+            });
+        }
+
+        function init() {
+            initNavigation();
+            initSearchInput();
+            renderProductGrid();
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
