@@ -361,7 +361,7 @@
                 const productCard = document.createElement('div');
                 productCard.className = 'product-card';
                 productCard.innerHTML = `
-                    <img src="/api/placeholder/${product.image}" alt="${product.name}">
+                    <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>${product.details}</p>
                     <a href="${product.amazonUrl}" target="_blank" rel="noopener noreferrer">Buy Now</a>
